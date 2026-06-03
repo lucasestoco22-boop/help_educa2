@@ -1,0 +1,636 @@
+ 
+ *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:'Montserrat', sans-serif;
+    }
+
+    html{
+      scroll-behavior:smooth;
+    }
+
+    body{
+      background:#f4f7fb;
+      overflow-x:hidden;
+    }
+
+    /* ================= HEADER ================= */
+
+    .top-header{
+      width:100%;
+      background:#f5f5f5;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:7px 40px;
+      position:sticky;
+      top:0;
+      z-index:999;
+      border-bottom:1px solid #ddd;
+      transition:0.3s;
+    }
+
+    .logo-area img{
+      width:140px;
+    }
+
+    /* ================= MENU ================= */
+
+    .menu ul{
+      display:flex;
+      align-items:center;
+      gap:35px;
+      list-style:none;
+    }
+
+    .menu a{
+      text-decoration:none;
+      color:#3e1591;
+      font-size:16px;
+      font-weight:600;
+      transition:0.3s;
+    }
+
+    .menu a:hover{
+      color:#f4b400;
+    }
+
+    /* ================= DROPDOWN ================= */
+
+    .dropdown{
+      position:relative;
+    }
+
+    .dropdown-menu{
+      position:absolute;
+      top:35px;
+      left:0;
+      background:white;
+      min-width:240px;
+      border-radius:14px;
+      padding:10px 0;
+      box-shadow:0 10px 25px rgba(0,0,0,0.1);
+      opacity:0;
+      visibility:hidden;
+      transform:translateY(10px);
+      transition:0.3s;
+      z-index:999;
+    }
+
+    .dropdown-menu li{
+      list-style:none;
+    }
+
+    .dropdown-menu a{
+      display:block;
+      padding:14px 20px;
+      color:#053475;
+      font-weight:600;
+    }
+
+    .dropdown-menu a:hover{
+      background:#eef5ff;
+      color:#f4b400;
+    }
+
+    .dropdown:hover .dropdown-menu{
+      opacity:1;
+      visibility:visible;
+      transform:translateY(0);
+    }
+
+    /* ================= BOTÃO ================= */
+
+    .btn-matricula{
+      background:#3e1591;
+      color:white;
+      text-decoration:none;
+      padding:16px 20px;
+      border-radius:20px;
+      font-weight:600;
+      transition:0.3s;
+    }
+
+    .btn-matricula:hover{
+      transform:scale(1.05);
+    }
+
+    /* ================= HERO ================= */
+
+    .hero{
+  min-height:90vh;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:80px;
+  flex-wrap:wrap;
+
+  position:relative;
+  overflow:hidden;
+
+  background:linear-gradient(
+    135deg,
+    #f8fbff,
+    #ffffff,
+    #eef5ff
+  );
+}
+.hero::before{
+  content:"";
+  position:absolute;
+
+  top:0;
+  right:0;
+
+  width:55%;
+  height:100%;
+
+  background:url("livro.png");
+  background-size:cover;
+  background-position:center;
+
+  opacity:0.6;
+
+  -webkit-mask-image:linear-gradient(
+    to left,
+    black 40%,
+    transparent 100%
+  );
+
+  mask-image:linear-gradient(
+    to left,
+    black 40%,
+    transparent 100%
+  );
+}
+.hero-text,
+.hero-image{
+  position:relative;
+  z-index:2;
+}
+
+    .hero-text{
+      max-width:600px;
+    }
+
+    .hero-text h1{
+      font-size:70px;
+      line-height:1.1;
+      color:#053475;
+      margin-bottom:25px;
+      font-weight:800;
+    }
+
+    .hero-text p{
+      font-size:20px;
+      color:#667085;
+      line-height:1.7;
+      margin-bottom:35px;
+    }
+
+    .btn-yellow{
+      background:#f4b400;
+      color:#053475;
+      padding:16px 30px;
+      border-radius:14px;
+      text-decoration:none;
+      font-weight:700;
+      transition:0.3s;
+    }
+
+    .btn-yellow:hover{
+      transform:scale(1.05);
+    }
+
+    .hero-image img{
+      width:100%;
+      max-width:500px;
+      border-radius:30px;
+      box-shadow:0 15px 40px rgba(0,0,0,0.1);
+    }
+
+    /* ================= CURSOS ================= */
+
+    .cursos{
+      padding:110px 50px;
+      background:#f4f4f4;
+    }
+
+    .cursos h2{
+      text-align:center;
+      font-size:52px;
+      color:#053475;
+      margin-bottom:60px;
+    }
+
+    .cursos-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      gap:35px;
+    }
+
+    .curso-card{
+      background:white;
+      border-radius:28px;
+      overflow:hidden;
+      transition:0.4s;
+      border:1px solid #ddd;
+    }
+
+    .curso-card:hover{
+      transform:translateY(-10px);
+      box-shadow:0 20px 40px rgba(0,0,0,0.12);
+    }
+
+    .curso-card img{
+      width:100%;
+      height:280px;
+      object-fit:cover;
+    }
+
+    .curso-content{
+      padding:30px;
+    }
+
+    .curso-content h3{
+      font-size:34px;
+      color:#111;
+      margin-bottom:10px;
+    }
+
+    .curso-content p{
+      color:#666;
+      font-size:20px;
+      margin-bottom:35px;
+    }
+
+    .btn-curso{
+      display:inlkine-bloc;
+      background:#053475;
+      color:white;
+      padding:16px 40px;
+      border-radius:40px;
+      text-decoration:none;
+      font-weight:700;
+      transition:0.3s;
+    }
+
+    .btn-curso:hover{
+      transform:scale(1.05);
+    }
+
+    /* ================= SOBRE ================= */
+
+    .sobre{
+      padding:110px 50px;
+      background:white;
+      text-align:center;
+    }
+
+    .sobre h2{
+      font-size:52px;
+      color:#053475;
+      margin-bottom:40px;
+    }
+
+    .sobre-container{
+      max-width:950px;
+      margin:auto;
+    }
+
+    .sobre-texto p{
+      font-size:20px;
+      line-height:1.9;
+      color:#667085;
+      margin-bottom:25px;
+    }
+
+    /* ================= MATRÍCULA ================= */
+
+    .matricula{
+      padding:110px 20px;
+      background:#eef5ff;
+      text-align:center;
+    }
+
+    .matricula h2{
+      font-size:52px;
+      color:#053475;
+      margin-bottom:20px;
+    }
+
+    .form-matricula{
+      max-width:600px;
+      margin:auto;
+      background:white;
+      padding:40px;
+      border-radius:25px;
+    }
+
+    .form-matricula input,
+    .form-matricula select{
+      width:100%;
+      padding:18px;
+      margin-bottom:20px;
+      border:none;
+      border-radius:14px;
+      background:#f4f7fb;
+    }
+
+    .form-matricula button{
+      width:100%;
+      padding:18px;
+      border:none;
+      background:#053475;
+      color:white;
+      border-radius:14px;
+      font-weight:700;
+      cursor:pointer;
+    }
+
+    /* ================= LOGIN ================= */
+
+    .login{
+      padding:110px 20px;
+      background:white;
+      text-align:center;
+    }
+
+    .login h2{
+      font-size:52px;
+      color:#053475;
+      margin-bottom:20px;
+    }
+
+    .login p{
+      color:#667085;
+      margin-bottom:40px;
+    }
+
+    .login-box{
+      max-width:520px;
+      margin:auto;
+      background:#eef5ff;
+      padding:40px;
+      border-radius:25px;
+    }
+
+    .login-box input{
+      width:100%;
+      padding:18px;
+      margin-bottom:20px;
+      border:none;
+      border-radius:14px;
+    }
+
+    .login-box button{
+      width:100%;
+      padding:18px;
+      border:none;
+      background:#053475;
+      color:white;
+      border-radius:14px;
+      font-weight:700;
+      cursor:pointer;
+    }
+
+    /* ================= AULAS ================= */
+
+    .aulas{
+      padding:110px 50px;
+      background:white;
+    }
+
+    .aulas h2{
+      text-align:center;
+      font-size:52px;
+      color:#053475;
+      margin-bottom:60px;
+    }
+
+    .video-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+      gap:30px;
+    }
+
+    .video-card{
+      background:#f8fbff;
+      border-radius:25px;
+      padding:25px;
+      box-shadow:0 10px 25px rgba(0,0,0,0.07);
+    }
+
+    .video-card h3{
+      color:#053475;
+      margin-bottom:15px;
+    }
+
+    .video-card p{
+      color:#667085;
+      margin-bottom:20px;
+    }
+
+    .video-card iframe{
+      width:100%;
+      height:220px;
+      border:none;
+      border-radius:18px;
+    }
+
+    /* ================= ATIVIDADES ================= */
+
+    .atividades{
+      padding:110px 50px;
+      background:#eef5ff;
+    }
+
+    .atividades h2{
+      text-align:center;
+      font-size:52px;
+      color:#053475;
+      margin-bottom:60px;
+    }
+
+    .atividade-grid{
+      display:grid;
+      
+      gap:30px;
+    }
+
+    .atividade-card{
+      background:white;
+      padding:30px;
+      border-radius:25px;
+      box-shadow:0 10px 25px rgba(0,0,0,0.08);
+    }
+
+    .atividade-card h3{
+      color:#053475;
+      margin-bottom:18px;
+    }
+
+    .atividade-card p{
+      color:#667085;
+      line-height:1.7;
+      margin-bottom:20px;
+    }
+
+    .upload-box{
+      background:#f4f7fb;
+      padding:20px;
+      border-radius:14px;
+      margin-bottom:20px;
+    }
+
+    .atividade-card button{
+      width:100%;
+      padding:16px;
+      border:none;
+      background:#053475;
+      color:white;
+      border-radius:14px;
+      font-weight:700;
+      cursor:pointer;
+    }
+
+    .btn-biblioteca{
+      display:block;
+      background:#053475;
+      color:white;
+      padding:14px;
+      border-radius:14px;
+      text-decoration:none;
+      font-weight:600;
+      text-align:center;
+      margin-bottom:15px;
+      transition:0.3s;
+    }
+
+    .btn-biblioteca:hover{
+      background:#f4b400;
+      color:#053475;
+    }
+
+    footer{
+      background:#021f47;
+      color:white;
+      text-align:center;
+      padding:40px;
+    }
+/* ================= BIBLIOTECA ================= */
+
+.biblioteca{
+  padding:110px 50px;
+  background:white;
+}
+
+.biblioteca h2{
+  text-align:center;
+  font-size:52px;
+  color:#053475;
+  margin-bottom:20px;
+}
+
+.biblioteca-subtitulo{
+  text-align:center;
+  color:#667085;
+  font-size:20px;
+  margin-bottom:60px;
+}
+/* ================= FOOTER ================= */
+
+footer{
+  background:#021f47;
+  color:white;
+  text-align:center;
+  padding:40px 20px;
+}
+
+.footer-redes{
+  display:flex;
+  justify-content:center;
+  gap:25px;
+  margin-bottom:20px;
+}
+
+.footer-redes a{
+  width:60px;
+  height:60px;
+  background:white;
+  color:#053475;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:28px;
+  text-decoration:none;
+  transition:0.3s;
+}
+
+.footer-redes a:hover{
+  transform:translateY(-5px) scale(1.08);
+  background:#f4b400;
+  color:#053475;
+}
+/* ================= HORÁRIOS ================= */
+
+.horarios{
+  padding:110px 50px;
+  background:#ffffff;
+}
+
+.horarios h2{
+  text-align:center;
+  font-size:52px;
+  color:#053475;
+  margin-bottom:20px;
+}
+
+.horarios-subtitulo{
+  text-align:center;
+  color:#667085;
+  font-size:20px;
+  margin-bottom:60px;
+}
+
+.horarios-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:30px;
+}
+
+.horario-card{
+  background:#eef5ff;
+  padding:35px;
+  border-radius:25px;
+  text-align:center;
+  transition:0.3s;
+  box-shadow:0 10px 25px rgba(0,0,0,0.08);
+}
+
+.horario-card:hover{
+  transform:translateY(-8px);
+}
+
+.horario-card h3{
+  color:#053475;
+  font-size:28px;
+  margin-bottom:15px;
+}
+
+.horario-card p{
+  color:#667085;
+  font-size:18px;
+  margin-bottom:10px;
+}
+
+.horario-card span{
+  display:inline-block;
+  background:#053475;
+  color:white;
+  padding:12px 20px;
+  border-radius:14px;
+  font-weight:700;
+}
